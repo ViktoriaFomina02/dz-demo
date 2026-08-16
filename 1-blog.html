@@ -4,63 +4,120 @@
 <meta charset="UTF-8">
 <title>Статья</title>
 <style>
-ul.catalog a{
-    color:#FFFFFF;
+ul.catalog a {
+    display: inline-block;   /* Теперь width и height заработают! */
+    text-decoration: none;
+    color: #FFFFFF;
     font-size: 18px;
     font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 15px;
+}
+ul {
+    list-style: none;        /* Убираем точки */
+    text-align: center;      /* Центрируем пункты внутри списка */
+    padding: 0;
+    margin: 80px 0 80px 0; 
+}
+ul.catalog li {
+    display: inline-block;   /* Ссылки встают в одну строку (без Flexbox!) */
+    margin: 0 30px;          /* Расстояние между пунктами меню */
+}
+#text{
+    background-color: rgba(31, 41, 55, 0.6);
+    color: rgba(255, 255, 255, 1);
     font-family:'Roboto', sans-serif;
-    width: 64px;
-    height: 19px;
+    font-weight: 400;
+    font-size: 16px;
+    width: 224px;
+    height: 40px;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    padding: 0 49px;
+    margin: 71px 180px 69px 1036px;
 }
 body{
     background-color:#121928;
     background:linear-gradient(180deg, #374151 0%, #111827 100%);
 }
 .open{
-    color:#FFFFFF;
+    color:rgba(255, 255, 255, 1);
     font-size: 14px;
     font-weight: 400;
     font-family:'Roboto', sans-serif;
-    width: 72px;
+    width: fit-content; 
     height: 16px;
+    margin: 0 auto 14px auto;
+    display: block;
+    opacity: 0.6;                   /* Прозрачность */
+    
 }
 .first{
     color:#FFFFFF;
     font-family:'Roboto', sans-serif;
     font-weight: 400;
     font-size: 24px;
-    leading-trim: NONE;
     line-height: 38px;
     letter-spacing: 0%;
     text-align: center;
+    margin: 0 auto 30px auto;
+}
+.avatar{
+    display: block;
+    width: 214px;          /* Ширина из вашего макета */
+    height: 53px;          /* Высота из вашего макета */
+    margin: 0 auto 30px auto;
+}
+.pictures{
+     display: block;                   /* Превращаем в блок */
+    width: 896px;                     /* Ширина из макета */
+    height: 594px;                    /* Высота из макета */
+    border-radius: 5px;               /* Скругление углов */
+    margin:0 auto 69px auto;        /* Сверху 397px, по бокам auto (центр), снизу 0 */
 }
 .theory{
     color:#FFFFFF;
     font-family:'Roboto', sans-serif;
     font-weight: 400;
     font-size: 20px;
-    leading-trim: NONE;
     line-height: 32px;
     letter-spacing: 0%;
+    display: block;
+    width: 708px;
+    height: 101px;
+    margin: 0 auto 185px auto;
 }
 .mood{
     color:#FFFFFF;
     font-family:'Roboto', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    leading-trim: NONE;
     line-height: 30px;
     letter-spacing: 0%;
+    display: block;
+    width: 708px;
+    height: 281px;
+    margin: 0 auto 103px auto;
+
 }
 .rights{
-    color: #FFFFFF;
+    color: rgba(255, 255, 255, 1);
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    leading-trim: NONE;
     line-height: 28px;
     letter-spacing: 0%;
     text-align: center;
+    display: block;                 /* Обязательно для блочной модели */
+    width: 226px;                   /* Ширина из макета */
+    height: 28px;                   /* Высота из макета */
+    opacity: 0.6;                   /* Прозрачность */
+    margin: 0 auto 77px auto;
+
+}
+span{
+    text-decoration: underline solid;
 }
 </style>
 </head>
@@ -75,13 +132,17 @@ body{
 </ul>
 </nav>
 </header>  
-<time class="open">Frontend &bull; 12 мая 2024</time>
+<div>
+<label for="text"></label>
+<input type="text" name="text" id="text" placeholder="Поиск"/>
+</div> 
+<time class="open">FRONTEND &bull; 12 мая 2024</time>
     <h1 class="first">Теория цвета - Как цвет влияет на поведение<br> 
         потребителей</h1>
     <img src="./Group 7.png"
-    alt="Аватарка разработчика"/>
+    alt="Аватарка разработчика" class="avatar"/>
     <img src="./8cefa35e4f3f91ff718dae25d01f84692996a2cd.png"
-    alt="цвета на экране"/>
+    alt="цвета на экране" class="pictures"/>
     <main>
         <section>
 <p class="theory">Теория цвета — это особенности эмоционального восприятия человеком тех или иных цветовых решений. 
@@ -91,10 +152,9 @@ body{
     <section>
 <p class="mood">Универсального ответа на вопрос, как тот или иной цвет влияет на разных людей, нет. 
     Эмоциональная и поведенческая реакция каждого человека зависит от личного опыта. 
-    Вместе с тем можно выделить определенные закономерности влияния цветов на поведение пользователей.</p>  
-    </section>
-    <section>
-<p class="mood">В исследовании «Влияние цвета на маркетинг» (Impact of color on marketing) говорится, что использование разных цветов может существенно влиять на настроение и поведение потребителей. 
+    Вместе с тем можно выделить определенные закономерности влияния цветов на поведение пользователей.<br>
+    <br>
+    В исследовании «Влияние цвета на маркетинг» <span>(Impact of color on marketing)</span> говорится, что использование разных цветов может существенно влиять на настроение и поведение потребителей. 
     Утверждается, что от 60 до 90% покупателей (в зависимости от категории продукта) дают положительную или отрицательную оценку товару, основываясь только на его цвете. </p>
     </section>
     </main>
