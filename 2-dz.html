@@ -4,97 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Форма регистрации</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
     <style>
+    *, *::before, *::after {
+    box-sizing: border-box;
+}
 body{       
-background-color: #F39494;
-background:
+    margin: 0;
+    background:
+    linear-gradient(243.18deg, #FDC5C5 25.45%, rgba(242,152,222,0) 100%),
     linear-gradient(243.43deg, #FFA5A5 32.96%, rgba(255,255,255,0) 82.03%),
-    linear-gradient(243.18deg, #FDC5C5 25.45%, rgba(242,152,222,0) 100%);}
-
-main{background-color: #FFFEFE;}
+    #F39494;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Open Sans", sans-serif;
+}
+main.card {
+    width: 100%;
+    max-width: 582px;
+    background-color: #FFFEFE;
+    border-radius: 10px;
+    padding: 72px 95px 91px 93px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+main.card:hover {
+    outline: 3px solid #089FE0;
+    
+}
+.card_header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
 h1{
+    margin: 0;
     color: #333333;
     font-size: 36px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;}
-p{
+    line-height: 1;
+}
+h1:hover{
+    text-decoration-line: underline;
+    text-decoration-color:#089FE0;
+
+}
+.card__subtitle{
+    margin: 0;
     color: #666666;
     font-size: 18px;
     font-weight: 400;
-    font-family: "Open Sans", sans-serif;}
-a{
-    color: #089FE0;
-    font-size: 18px;
-    font-weight: 400;
-    font-family: "Open Sans", sans-serif;
-    font-style: solid;
+    line-height: 1.44;
 }
-.white-input{
+.card__subtitle:hover{
+    outline:3px solid #089FE0;
+}
+.card__subtitle a{
+    color: #089FE0;
+}
+.company{
+    display: flex;
+    align-items:center;
+    gap: 10px;
+    width: 100%;
+    max-width: 394px;
+    height: 44px;
+    padding: 0 150px 0 11px;
     background-color: #FFFFFF;
+    border: 1px solid #F5F5F5;
+    border-radius: 5px;
+}
+
+.company-prefix{
     color: #333333;
     font-size: 16px;
     font-weight: 600;
-    font-family: "Open Sans", sans-serif;}
+}
+.company-divider{
+    width: 1px;
+    height: 12px;
+    background: #089FE0;
+    flex-shrink: 0;
+}
+.company input{
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0;
+    font-size: 16px;
+    color:#333333;
+    font-family: inherit;
+}
+.company:hover{
+    outline:3px solid #089FE0;
+}
 .gray-input{
     background-color: #F5F5F5;
     color: #999999;
     font-size: 16px;
     font-weight: 400;
-    font-family: "Open Sans", sans-serif;}
-button{
-    background-color: #089FE0;
-    color: #FFFFFF;
-    font-size: 18px;
-    font-weight: 400;
-    font-family: "Open Sans", sans-serif;}
+    width: 100%;
+    padding: 9px 35px 9px 11px;
+    border: 1px solid #F5F5F5;
+    border-radius: 5px;
+}
+.gray-input::placeholder {
+    color: #999999;
+    font-weight: 300;
+    font-style: italic;
+}
+.card__name-group{
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+}
+.card__name-group:hover{
+    outline:3px solid #089FE0;
+}
+.email_hover:hover{
+    outline:3px solid #089FE0;
+}
+.card__name-group .gray-input {
+    flex: 1;
+    min-width: 0;
+}
+.card__name-group .gray-input:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.card__name-group .gray-input:last-child {
+    border-radius: 0 5px 5px 0;
+}
 .black-input{
     color: #666666;
     font-size: 14px;
     font-weight: 400;
-    font-family: "Open Sans", sans-serif;}
+}
+    button{
+    background-color: #089FE0;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 5px;
+    width: 100%;
+    height: 44px;
+    border: none;
+}
+button:hover{
+    outline:3px solid #089FE0;
+}
 footer{
-    color: #089FE0;
+    display: flex;
+    align-items: center;
+    color: #666666;
     font-size: 14px;
     font-weight: 400;
-    font-family: "Open Sans", sans-serif;
+    gap: 5px;
+}
+footer:hover{
+    outline:3px solid #089FE0;
+}
+footer a{
+    color:#089FE0;
+    font-size: 14px;
+    text-decoration: none;
 }    
     </style>
 </head>
 <body>
-    <main>
+    <main class="card">
+<div class="card_header">        
 <h1>Регистрация</h1>
-<p>Уже есть аккаунт?</p>
-<a href="#">Войти</a>
-<form action="#">
-    
-<div>
-    <label for="text">Моя компания</label>
-<input type="text" name="text" id="text" class="white-input"/>
+<p class="card__subtitle">Уже есть аккаунт?
+<a href="#">Войти</a></p>
+</div>
+
+<div class="company">
+    <span class="company-prefix">Моя компания</span>
+    <span class="company-divider"></span>
+<input type="text" name="company" id="company" class="white-input"/>
 </div> 
 
-<div>
+<div class="card__name-group">
     <label for="text"></label>
-<input type="text" name="text" id="text" class="gray-input" placeholder="Имя"/>
-</div> 
-
-<div>
+<input type="text" name="text" id="name" class="gray-input" placeholder="Имя"/>
     <label for="text"></label>
-<input type="text" name="text" id="text" class="gray-input" placeholder="Фамилия"/>
+<input type="text" name="text" id="surname" class="gray-input" placeholder="Фамилия"/>
 </div> 
     
-<div>
+<div class="email_hover">
     <label for="email"></label>
 <input type="email" name="email" id="email" class="gray-input" placeholder="E-mail"/>
 </div>
-<button>Зарегистрироваться</button>
-<div>
-<label for="agree">Я прочитал и принимаю</label>
-    <input type="checkbox" name="agree" id="agree" class="black-input"/>
-</div>
+<button type="submit">Зарегистрироваться</button>
+<div class="card__footer">
 <footer>
+<input type="checkbox" name="agree" id="agree" class="black-input"/>
+<label for="agree">Я прочитал и принимаю</label>
 <a href="#">Условия использования</a>
 </footer>
-</form>
+</div>
 </main>
 </body>
 </html>
